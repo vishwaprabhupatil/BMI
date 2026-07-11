@@ -5,8 +5,7 @@ import time
 from score import Scoreboard
 screen=t.Screen()
 
-def end(x):
-    x=False
+
 
 screen.setup(width=800,height=600)
 screen.bgcolor("black")

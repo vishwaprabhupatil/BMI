@@ -13,10 +13,12 @@ class Snake():
         self.create_snake()
         self.head=self.snakes[0]
         
+        
     def create_snake(self):    
         for square in STARTING_POSITION:
             self.add_body(square)
-            
+    
+    
     def add_body(self,position):
         kachwa=t.Turtle(shape="square",undobuffersize=20)
         kachwa.color("white")
@@ -50,4 +52,11 @@ class Snake():
         if self.head.heading()!=RIGHT:
             self.head.setheading(LEFT)    
     
+    def reset(self):
+        for seg in self.snakes:
+            seg.goto(1000,1000)
+        
+        self.snakes.clear()
+        self.create_snake()
+        self.head=self.snakes[0]
    
