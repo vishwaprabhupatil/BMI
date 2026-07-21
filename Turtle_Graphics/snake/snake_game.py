@@ -4,6 +4,8 @@ import time
 from snake import Snake
 from food import Food
 from score import Score
+
+
 screen=t.Screen()
 
 screen.setup(width=600,height=600)
@@ -41,6 +43,8 @@ while game_on:
             pass
         elif snake.head.distance(segment)<10:
             score.reset()
+            with open("high_score.txt",'w') as high: 
+                high.write(f"{score.high_score}")
             snake.reset()
 
 screen.exitonclick()
